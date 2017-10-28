@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<IGenericDataItem> dataItems = new ArrayList<>();
         for(Person person: persons)
             dataItems.add(person);
-        GenericAdapter genericAdapter = new GenericAdapter(null, dataItems);
+        GenericAdapter genericAdapter = new GenericAdapter(null, dataItems, R.layout.list_item);
 
         RecyclerView recycler = (RecyclerView) findViewById(R.id.recycler);
         recycler.setLayoutManager(new LinearLayoutManager(this));
