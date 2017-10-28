@@ -1,6 +1,8 @@
 package com.outerspace.porkstew.model;
 
-public class Person {
+import com.outerspace.porkstew.adapter.IGenericListItem;
+
+public class Person implements IGenericListItem {
 
     public String firstName;
     public String middleName;
