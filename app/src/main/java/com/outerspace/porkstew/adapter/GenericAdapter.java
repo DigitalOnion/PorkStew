@@ -4,7 +4,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+
 public class GenericAdapter extends RecyclerView.Adapter<GenericAdapter.GenericViewHolder>{
+
+    private ArrayList<IGenericDataItem> dataItems;
 
     @Override
     public GenericViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
