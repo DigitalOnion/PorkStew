@@ -30,12 +30,11 @@ public class MainActivity extends AppCompatActivity {
 
         PersonList personList = new PersonList();
         ArrayList<Person> persons = personList.getList();
-        MyAdapter adapter = new MyAdapter(persons);
         ListItemViewModel viewModelFactory = new ListItemViewModel();
 
         ArrayList<IGenericDataItem> dataItems = new ArrayList<>();
-        for(Person person: persons)
-            dataItems.add(person);
+        dataItems.addAll(persons);
+
         GenericAdapter genericAdapter = new GenericAdapter(
                 viewModelFactory,
                 dataItems,
@@ -44,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
 
         RecyclerView recycler = (RecyclerView) findViewById(R.id.recycler);
         recycler.setLayoutManager(new LinearLayoutManager(this));
-        // recycler.setAdapter(adapter);
         recycler.setAdapter(genericAdapter);
     }
 }
