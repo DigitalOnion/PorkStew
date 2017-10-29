@@ -3,9 +3,9 @@ package com.outerspace.porkstew.viewmodel;
 import com.outerspace.porkstew.adapter.IGenericDataItem;
 
 /**
- * Created by user on 10/28/17.
+ * IGenericViewModel is the generic blueprint for a View Model needed in the GenericAdapter
+ *
  */
-
 public interface IGenericViewModel {
 
     public IGenericViewModel getInstance();
