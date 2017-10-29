@@ -1,6 +1,5 @@
 package com.outerspace.porkstew;
 
-import android.app.LauncherActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,7 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import com.android.databinding.library.baseAdapters.BR;
 import com.outerspace.porkstew.adapter.GenericAdapter;
 import com.outerspace.porkstew.adapter.IGenericDataItem;
-import com.outerspace.porkstew.adapter.MyAdapter;
 import com.outerspace.porkstew.model.Person;
 import com.outerspace.porkstew.model.PersonList;
 import com.outerspace.porkstew.viewmodel.ListItemViewModel;
