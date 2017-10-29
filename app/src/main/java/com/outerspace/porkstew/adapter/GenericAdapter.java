@@ -8,11 +8,9 @@ import android.view.ViewGroup;
 
 import com.android.databinding.library.baseAdapters.BR;
 import com.outerspace.porkstew.databinding.ListItemBinding;
-import com.outerspace.porkstew.model.Person;
 import com.outerspace.porkstew.viewmodel.ListItemViewModel;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class GenericAdapter extends RecyclerView.Adapter<GenericAdapter.GenericViewHolder>{
     private ListItemViewModel viewModelFactory;
@@ -36,12 +34,10 @@ public class GenericAdapter extends RecyclerView.Adapter<GenericAdapter.GenericV
 
     @Override
     public void onBindViewHolder(GenericViewHolder holder, int position) {
-        Person person = (Person) dataItems.get(position);
         ListItemViewModel viewModel = (ListItemViewModel) viewModelFactory.getInstance();
         viewModel.setDataItem(dataItems.get(position));
         holder.binding.setVariable(BR.list_item_view_model, viewModel);
         holder.binding.executePendingBindings();
-        // holder.txtFullname.setText(person.fullName());
     }
 
     @Override
@@ -51,11 +47,9 @@ public class GenericAdapter extends RecyclerView.Adapter<GenericAdapter.GenericV
 
     public class GenericViewHolder extends RecyclerView.ViewHolder {
         public ListItemBinding binding;
-        //public TextView txtFullname;
         public GenericViewHolder(View itemView) {
             super(itemView);
             binding = DataBindingUtil.bind(itemView);
-            //txtFullname = (TextView)  itemView.findViewById(R.id.text_fullname);
         }
     }
 
