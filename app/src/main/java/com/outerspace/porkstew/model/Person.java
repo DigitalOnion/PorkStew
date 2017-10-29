@@ -17,14 +17,4 @@ public class Person implements IGenericDataItem {
         this.lastNameDad = lastNameDad;
         this.lastNameMom = lastNameMom;
     }
-
-    // TODO: remove from here and put it in the ViewModel
-    public String fullName() {
-        String s = firstName;
-        //s += (middleName.length() == 0 ? "" : " " + middleName.charAt(0));
-        s += " " + lastNameDad;
-        s += " " + lastNameMom;
-        return s;
-    }
-
 }
