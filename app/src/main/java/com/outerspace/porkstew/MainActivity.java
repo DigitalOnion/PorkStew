@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.android.databinding.library.baseAdapters.BR;
 import com.outerspace.porkstew.adapter.GenericAdapter;
 import com.outerspace.porkstew.adapter.IGenericDataItem;
 import com.outerspace.porkstew.adapter.MyAdapter;
@@ -35,7 +36,11 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<IGenericDataItem> dataItems = new ArrayList<>();
         for(Person person: persons)
             dataItems.add(person);
-        GenericAdapter genericAdapter = new GenericAdapter(viewModelFactory, dataItems, R.layout.list_item);
+        GenericAdapter genericAdapter = new GenericAdapter(
+                viewModelFactory,
+                dataItems,
+                R.layout.list_item,
+                BR.list_item_view_model);
 
         RecyclerView recycler = (RecyclerView) findViewById(R.id.recycler);
         recycler.setLayoutManager(new LinearLayoutManager(this));

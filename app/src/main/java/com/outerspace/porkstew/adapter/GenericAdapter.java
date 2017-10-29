@@ -16,11 +16,16 @@ public class GenericAdapter extends RecyclerView.Adapter<GenericAdapter.GenericV
     private ListItemViewModel viewModelFactory;
     private ArrayList<IGenericDataItem> dataItems;
     private int layoutId;
+    private int variableId;
 
-    public GenericAdapter(ListItemViewModel viewModelFactory, ArrayList<IGenericDataItem> dataItems, int layoutId) {
+    public GenericAdapter(ListItemViewModel viewModelFactory,
+                          ArrayList<IGenericDataItem> dataItems,
+                          int layoutId,
+                          int variableId) {
         this.viewModelFactory = viewModelFactory;
-        this.dataItems = dataItems;
-        this.layoutId  = layoutId;
+        this.dataItems        = dataItems;
+        this.layoutId         = layoutId;
+        this.variableId       = variableId;
     }
 
     @Override
@@ -36,7 +41,7 @@ public class GenericAdapter extends RecyclerView.Adapter<GenericAdapter.GenericV
     public void onBindViewHolder(GenericViewHolder holder, int position) {
         ListItemViewModel viewModel = (ListItemViewModel) viewModelFactory.getInstance();
         viewModel.setDataItem(dataItems.get(position));
-        holder.binding.setVariable(BR.list_item_view_model, viewModel);
+        holder.binding.setVariable(variableId, viewModel);
         holder.binding.executePendingBindings();
     }
 
