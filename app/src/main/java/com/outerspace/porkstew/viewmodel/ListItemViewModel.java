@@ -11,7 +11,7 @@ public class ListItemViewModel implements IGenericViewModel {
     public IGenericViewModel getInstance() {
         return new ListItemViewModel();
     }
-// APEX vendor.
+
     @Override
     public void setDataItem(IGenericDataItem dataItem) {
         person = (Person) dataItem;
